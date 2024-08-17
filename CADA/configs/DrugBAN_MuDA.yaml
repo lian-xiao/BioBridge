@@ -1,0 +1,28 @@
+SOLVER:
+  BATCH_SIZE: 32
+  MAX_EPOCH: 100
+  LR: 1e-4
+  DA_LR: 5e-5
+  SEED: 3407
+
+DA:
+  TASK: True
+  USE: True
+  METHOD: "MADA"
+  USE_ENTROPY: False
+  RANDOM_LAYER: True
+  ORIGINAL_RANDOM: True
+  RANDOM_DIM: 256
+  INIT_EPOCH: 10
+  MuDa: True
+
+DECODER:
+  BINARY: 2
+
+# Config below only when you use comet
+COMET:
+  PROJECT_NAME: "DrugBAN_CDAN"
+  TAG: "DA"
+
+RESULT:
+  OUTPUT_DIR: './result/version_1'
