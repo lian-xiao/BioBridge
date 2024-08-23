@@ -12,7 +12,7 @@ import warnings, os
 import pandas as pd
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 #device = 'cpu'
-cfg_path = "./configs/DrugBAN_DA.yaml"
+cfg_path = "configs/CDAN.yaml"
 data = "bindingdb"
 comet_support = False
 

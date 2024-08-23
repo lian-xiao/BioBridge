@@ -27,7 +27,7 @@ import pandas as pd
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 parser = argparse.ArgumentParser(description="DrugBAN for DTI prediction")
-parser.add_argument('--cfg', default='configs/DrugBAN_MuDA.yaml', help="path to config file", type=str)
+parser.add_argument('--cfg', default='configs/CADA.yaml', help="path to config file", type=str)
 parser.add_argument('--model', default='dti_multiout', help="model type", choices=['drugban', 'dti_multiout', 'dti_multi'])
 parser.add_argument('--data', default='bindingdb/', type=str, metavar='TASK',
                     help='dataset')

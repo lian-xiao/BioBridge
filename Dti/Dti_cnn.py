@@ -5,10 +5,10 @@ from dgllife.model.gnn.gcn import GCNLayer
 from torch import einsum
 from torch.nn.utils import weight_norm
 from dgllife.model.gnn import GCN
-from Drug_ban.ban import BANLayer, FCNet
+from Dti.ban import BANLayer, FCNet
 import dgl.function as fn
 
-from Drug_ban.models import MolecularGCN, ProteinCNN
+from Dti.models import MolecularGCN, ProteinCNN
 
 
 class Stem(nn.Module):
