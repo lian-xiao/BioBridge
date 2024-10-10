@@ -63,4 +63,4 @@ To run the meta-learning mode, execute the following command:
 python Dti_cnn_meta.py
 ```
 
-This script will train the model using the multi-domain aware meta-learning framework as described in the paper.
+This script will train the model using the meta-learning strategy as described in the paper.
