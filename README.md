@@ -1,7 +1,6 @@
-# Multi-Domain Aware Meta-Learning Framework for Drug-Target Interactions
+# Transferable Binding Principles Meta-Learnig for Cross-Domain Drug-Target Interaction Prediction
 
-This repository contains the implementation of the meta-learning framework described in the paper "Bridging Data and Domain Gaps: A Multi-Domain Aware Meta-Learning Framework for Interpretable Drug-Target Interactions". The framework is designed to enhance the interpretability of drug-target interactions by leveraging a multi-domain aware approach.
-
+This repository contains the implementation of the meta-learning framework described in the paper "Transferable Binding Principles Meta-Learnig for Cross-Domain Drug-Target Interaction Prediction".
 ## Table of Contents
 
 - [Requirements](#requirements)
