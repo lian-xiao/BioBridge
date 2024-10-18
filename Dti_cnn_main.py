@@ -13,22 +13,12 @@ from py_lighting_model.light_Dti_cnn import LightDti, LightDta
 from Data.DataMoudle_base_emb import BEDataModule, BEDataModule_Da
 import os
 import json
-from utils_callback import ProgressBar
-class CustomFilenameCallback(pl.Callback):
-    def on_test_end(self, trainer, pl_module):
-        test_metrics = trainer.callback_metrics  
-        test_auroc = test_metrics['test_auroc_avg']
-        metrics = {key: float(value) for key, value in test_metrics.items()}
-        original_dir_name = trainer.logger.log_dir
-        components = original_dir_name.split("/")
-        new_path = os.path.join("/".join(components[:-1]), f"auroc{test_auroc :.4f}")
-        f = open(os.path.join(trainer.logger.log_dir, 'metrics.json'), 'w')
-        json.dump(metrics, f)
-        f.close()
-        os.rename(original_dir_name, new_path)
+from utils_callback import ProgressBar, CustomFilenameCallback
+
+
 class CustomFilenameCallbackrmse(pl.Callback):
     def on_test_end(self, trainer, pl_module):
-        test_metrics = trainer.callback_metrics  
+        test_metrics = trainer.callback_metrics
         test_auroc = test_metrics['test_rmse_avg']
         metrics = {key: float(value) for key, value in test_metrics.items()}
         original_dir_name = trainer.logger.log_dir
@@ -50,7 +40,7 @@ if __name__ == '__main__':
     config = argparse.ArgumentParser(description='Combined configuration')
     config.__dict__.update(train_config.__dict__)
     config.__dict__.update(model_config.__dict__)
-
+    config = argparse.Namespace(**vars(config))
     train_config.dataFolder = os.path.join(train_config.data_root, train_config.dataset_name)
     seed_everything(train_config.seed)
     if train_config.early_stop == True:
@@ -59,13 +49,8 @@ if __name__ == '__main__':
         early_stop_callback = EarlyStopping(monitor='train_loss', patience=train_config.max_epochs)
     p_emb, d_emb = None, None
     alphabet, mol_tokenizer = None, None
-    if train_config.Da:
-        model_config.binary = 2
-        datamodule = BEDataModule_Da(config, tokenizer=mol_tokenizer, alphabet=alphabet)
-        datamodule.prepare_data()
-    else:
-        datamodule = BEDataModule(config, tokenizer=mol_tokenizer, alphabet=alphabet)
-        datamodule.prepare_data()
+    datamodule = BEDataModule(config, tokenizer=mol_tokenizer, alphabet=alphabet)
+    datamodule.prepare_data()
 
     if train_config.dataset_name == 'pdb2020':
         model = LightDta(model_config, train_config)

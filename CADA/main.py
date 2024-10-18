@@ -31,7 +31,7 @@ parser.add_argument('--cfg', default='configs/CADA.yaml', help="path to config f
 parser.add_argument('--model', default='dti_multiout', help="model type", choices=['drugban', 'dti_multiout', 'dti_multi'])
 parser.add_argument('--data', default='bindingdb/', type=str, metavar='TASK',
                     help='dataset')
-parser.add_argument('--split', default='meta_unseen_drug', type=str, metavar='S', help="split task"), #choices=['random', 'cold', 'cluster','unseen_drug'])
+parser.add_argument('--split', default='meta_unseen_protein', type=str, metavar='S', help="split task"), #choices=['random', 'cold', 'cluster','unseen_drug'])
 parser.add_argument('--save', default='result/', type=str)
 parser.add_argument('--seed',default=2026,type=int)
 args = parser.parse_args()
@@ -69,7 +69,7 @@ def main():
     print(f"Hyperparameters: {dict(cfg)}")
     print(f"Running on: {device}", end="\n\n")
 
-    dataFolder = f'datasets/{args.data}'
+    dataFolder = f'../Data/{args.data}'
     dataFolder = os.path.join(dataFolder, str(args.split))
 
     if not cfg.DA.TASK:

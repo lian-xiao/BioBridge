@@ -6,7 +6,6 @@ def get_train_args():
     parser.add_argument('--data_root', type=str, default='Data', help='Root directory for data')
     parser.add_argument('--dataset_name', type=str, default='bindingdb/meta_unseen_protein/', help='Dataset name')
     parser.add_argument('--measure_name', type=str, nargs='+', default=['Y'], help='Measure names')
-    parser.add_argument('--Da', action='store_false', help='Enable Da')
     parser.add_argument('--optimizer_type', type=str, default='Adam', help='Optimizer type')
     parser.add_argument('--optimizer_momentum', type=float, default=0.9, help='Optimizer momentum')
     parser.add_argument('--weight_decay', type=float, default=2.5e-5, help='Weight decay')
