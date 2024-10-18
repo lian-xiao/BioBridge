@@ -55,6 +55,14 @@ python Dti_cnn_main.py
 
 This script will train the model using the regular learning approach as described in the paper.
 
+### Running with CADA Module
+To run the script using the CADA module for cross-domain drug-target interaction prediction, execute the following command:
+
+```bash
+python CADA/main.py
+```
+This script will utilize the CADA module to assist in predicting drug-target interactions across different domains, as detailed in the paper.
+
 ### Meta-Learning Mode
 
 To run the meta-learning mode, execute the following command:
