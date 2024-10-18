@@ -7,6 +7,7 @@ This repository contains the implementation of the meta-learning framework descr
 - [Installation](#installation)
 - [Running the Code](#running-the-code)
   - [Regular Learning Mode](#regular-learning-mode)
+  - [Running with CADA Module](#running-with-cada-module)
   - [Meta-Learning Mode](#meta-learning-mode)
 - [Citation](#citation)
 - [License](#license)
@@ -55,7 +56,7 @@ python Dti_cnn_main.py
 
 This script will train the model using the regular learning approach as described in the paper.
 
-### Running with CADA Module
+### Running with CADA Module <a name="running-with-cada-module"></a>
 To run the script using the CADA module for cross-domain drug-target interaction prediction, execute the following command:
 
 ```bash
