@@ -1,6 +1,4 @@
-根据您提供的信息，以下是更新后的GitHub README文件内容，包含了从输入准备到输出的详细解释：
 
-```markdown
 # Transferable Binding Principles Meta-Learning for Cross-Domain Drug-Target Interaction Prediction
 
 This repository contains the implementation of the meta-learning framework described in the paper "Transferable Binding Principles Meta-Learning for Cross-Domain Drug-Target Interaction Prediction".
