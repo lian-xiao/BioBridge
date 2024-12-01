@@ -17,8 +17,6 @@ from utils_callback import CustomFilenameCallback, My_ModelCheckpoint, ProgressB
 
 if __name__ == '__main__':
     torch.cuda.empty_cache()
-
-    torch.cuda.empty_cache()
     train_config = get_train_args()
     model_config = get_model_args()
 

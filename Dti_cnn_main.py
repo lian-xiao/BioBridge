@@ -55,7 +55,6 @@ if __name__ == '__main__':
     if train_config.dataset_name == 'pdb2020':
         model = LightDta(model_config, train_config)
     else:
-
         model = LightDti(d_emb, p_emb, model_config, train_config)
 
     checkpoint_root = os.path.join(train_config.checkpoints_folder, train_config.dataset_name)

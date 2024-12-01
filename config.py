@@ -32,8 +32,6 @@ def get_model_args():
     parser = argparse.ArgumentParser(description='Model configuration')
     parser.add_argument('--drugban', action='store_true', help='Enable drugban')
     parser.add_argument('--muti_out', action='store_true', help='Enable multi output')
-    parser.add_argument('--p_ems2_emb', action='store_true', help='Enable p_ems2 embedding')
-    parser.add_argument('--d_molformer_emb', action='store_true', help='Enable d_molformer embedding')
     parser.add_argument('--p_emb', type=int, default=128, help='P embedding size')
     parser.add_argument('--d_emb', type=int, default=128, help='D embedding size')
     parser.add_argument('--d_stem_channel', type=int, default=128, help='D stem channel size')
